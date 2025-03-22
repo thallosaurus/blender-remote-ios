@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59C55D1E2D8DF45A00DEB0CD /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 59C55D1D2D8DF45A00DEB0CD /* Starscream */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		591CFCB32D8B4D5E008A3D95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 591CFC9A2D8B4D5D008A3D95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 591CFCA12D8B4D5D008A3D95;
+			remoteInfo = gyro;
+		};
+		591CFCBD2D8B4D5E008A3D95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 591CFC9A2D8B4D5D008A3D95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 591CFCA12D8B4D5D008A3D95;
+			remoteInfo = gyro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		591CFCA22D8B4D5D008A3D95 /* gyro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gyro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		591CFCB22D8B4D5E008A3D95 /* gyroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gyroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		591CFCBC2D8B4D5E008A3D95 /* gyroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gyroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		591CFCA42D8B4D5D008A3D95 /* gyro */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = gyro;
+			sourceTree = "<group>";
+		};
+		591CFCB52D8B4D5E008A3D95 /* gyroTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = gyroTests;
+			sourceTree = "<group>";
+		};
+		591CFCBF2D8B4D5E008A3D95 /* gyroUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = gyroUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		591CFC9F2D8B4D5D008A3D95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59C55D1E2D8DF45A00DEB0CD /* Starscream in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		591CFCAF2D8B4D5E008A3D95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		591CFCB92D8B4D5E008A3D95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		591CFC992D8B4D5D008A3D95 = {
+			isa = PBXGroup;
+			children = (
+				591CFCA42D8B4D5D008A3D95 /* gyro */,
+				591CFCB52D8B4D5E008A3D95 /* gyroTests */,
+				591CFCBF2D8B4D5E008A3D95 /* gyroUITests */,
+				591CFCA32D8B4D5D008A3D95 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		591CFCA32D8B4D5D008A3D95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				591CFCA22D8B4D5D008A3D95 /* gyro.app */,
+				591CFCB22D8B4D5E008A3D95 /* gyroTests.xctest */,
+				591CFCBC2D8B4D5E008A3D95 /* gyroUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		591CFCA12D8B4D5D008A3D95 /* gyro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 591CFCC62D8B4D5E008A3D95 /* Build configuration list for PBXNativeTarget "gyro" */;
+			buildPhases = (
+				591CFC9E2D8B4D5D008A3D95 /* Sources */,
+				591CFC9F2D8B4D5D008A3D95 /* Frameworks */,
+				591CFCA02D8B4D5D008A3D95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				591CFCA42D8B4D5D008A3D95 /* gyro */,
+			);
+			name = gyro;
+			packageProductDependencies = (
+				59C55D1D2D8DF45A00DEB0CD /* Starscream */,
+			);
+			productName = gyro;
+			productReference = 591CFCA22D8B4D5D008A3D95 /* gyro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		591CFCB12D8B4D5E008A3D95 /* gyroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 591CFCC92D8B4D5E008A3D95 /* Build configuration list for PBXNativeTarget "gyroTests" */;
+			buildPhases = (
+				591CFCAE2D8B4D5E008A3D95 /* Sources */,
+				591CFCAF2D8B4D5E008A3D95 /* Frameworks */,
+				591CFCB02D8B4D5E008A3D95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				591CFCB42D8B4D5E008A3D95 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				591CFCB52D8B4D5E008A3D95 /* gyroTests */,
+			);
+			name = gyroTests;
+			packageProductDependencies = (
+			);
+			productName = gyroTests;
+			productReference = 591CFCB22D8B4D5E008A3D95 /* gyroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		591CFCBB2D8B4D5E008A3D95 /* gyroUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 591CFCCC2D8B4D5E008A3D95 /* Build configuration list for PBXNativeTarget "gyroUITests" */;
+			buildPhases = (
+				591CFCB82D8B4D5E008A3D95 /* Sources */,
+				591CFCB92D8B4D5E008A3D95 /* Frameworks */,
+				591CFCBA2D8B4D5E008A3D95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				591CFCBE2D8B4D5E008A3D95 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				591CFCBF2D8B4D5E008A3D95 /* gyroUITests */,
+			);
+			name = gyroUITests;
+			packageProductDependencies = (
+			);
+			productName = gyroUITests;
+			productReference = 591CFCBC2D8B4D5E008A3D95 /* gyroUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		591CFC9A2D8B4D5D008A3D95 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					591CFCA12D8B4D5D008A3D95 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					591CFCB12D8B4D5E008A3D95 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 591CFCA12D8B4D5D008A3D95;
+					};
+					591CFCBB2D8B4D5E008A3D95 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 591CFCA12D8B4D5D008A3D95;
+					};
+				};
+			};
+			buildConfigurationList = 591CFC9D2D8B4D5D008A3D95 /* Build configuration list for PBXProject "gyro" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 591CFC992D8B4D5D008A3D95;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				59C55D1C2D8DF45A00DEB0CD /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 591CFCA32D8B4D5D008A3D95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				591CFCA12D8B4D5D008A3D95 /* gyro */,
+				591CFCB12D8B4D5E008A3D95 /* gyroTests */,
+				591CFCBB2D8B4D5E008A3D95 /* gyroUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		591CFCA02D8B4D5D008A3D95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		591CFCB02D8B4D5E008A3D95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		591CFCBA2D8B4D5E008A3D95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		591CFC9E2D8B4D5D008A3D95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		591CFCAE2D8B4D5E008A3D95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		591CFCB82D8B4D5E008A3D95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		591CFCB42D8B4D5E008A3D95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 591CFCA12D8B4D5D008A3D95 /* gyro */;
+			targetProxy = 591CFCB32D8B4D5E008A3D95 /* PBXContainerItemProxy */;
+		};
+		591CFCBE2D8B4D5E008A3D95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 591CFCA12D8B4D5D008A3D95 /* gyro */;
+			targetProxy = 591CFCBD2D8B4D5E008A3D95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		591CFCC42D8B4D5E008A3D95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		591CFCC52D8B4D5E008A3D95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		591CFCC72D8B4D5E008A3D95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gyro/Preview Content\"";
+				DEVELOPMENT_TEAM = KAUP57EMXY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/numpy/random/lib",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/numpy/_core/lib",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/MaterialX",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Ar",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/CameraUtil",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Garch",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/GeomUtil",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Gf",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Glf",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Kind",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Ndr",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Pcp",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Plug",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/PxOsd",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Sdf",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Sdr",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Tf",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Trace",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Ts",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Usd",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdAppUtils",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdGeom",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdHydra",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdImagingGL",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdLux",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdMedia",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdMtlx",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdPhysics",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdProc",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdRender",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdRi",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdSemantics",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdShade",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdSkel",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdUI",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdUtils",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdValidation",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdVol",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Vt",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Work",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/scripts/addons_core/io_scene_gltf2",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/lib",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = internal.htw.gyro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		591CFCC82D8B4D5E008A3D95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gyro/Preview Content\"";
+				DEVELOPMENT_TEAM = KAUP57EMXY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/numpy/random/lib",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/numpy/_core/lib",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/MaterialX",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Ar",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/CameraUtil",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Garch",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/GeomUtil",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Gf",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Glf",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Kind",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Ndr",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Pcp",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Plug",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/PxOsd",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Sdf",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Sdr",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Tf",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Trace",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Ts",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Usd",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdAppUtils",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdGeom",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdHydra",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdImagingGL",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdLux",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdMedia",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdMtlx",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdPhysics",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdProc",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdRender",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdRi",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdSemantics",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdShade",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdSkel",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdUI",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdUtils",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdValidation",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/UsdVol",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Vt",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/python/lib/python3.11/site-packages/pxr/Work",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/4.4/scripts/addons_core/io_scene_gltf2",
+					"$(PROJECT_DIR)/gyro/gyroServer/venv/lib/python3.11/site-packages/bpy/lib",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = internal.htw.gyro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		591CFCCA2D8B4D5E008A3D95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = internal.htw.gyroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gyro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gyro";
+			};
+			name = Debug;
+		};
+		591CFCCB2D8B4D5E008A3D95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = internal.htw.gyroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gyro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gyro";
+			};
+			name = Release;
+		};
+		591CFCCD2D8B4D5E008A3D95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = internal.htw.gyroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gyro;
+			};
+			name = Debug;
+		};
+		591CFCCE2D8B4D5E008A3D95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = internal.htw.gyroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gyro;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		591CFC9D2D8B4D5D008A3D95 /* Build configuration list for PBXProject "gyro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				591CFCC42D8B4D5E008A3D95 /* Debug */,
+				591CFCC52D8B4D5E008A3D95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		591CFCC62D8B4D5E008A3D95 /* Build configuration list for PBXNativeTarget "gyro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				591CFCC72D8B4D5E008A3D95 /* Debug */,
+				591CFCC82D8B4D5E008A3D95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		591CFCC92D8B4D5E008A3D95 /* Build configuration list for PBXNativeTarget "gyroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				591CFCCA2D8B4D5E008A3D95 /* Debug */,
+				591CFCCB2D8B4D5E008A3D95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		591CFCCC2D8B4D5E008A3D95 /* Build configuration list for PBXNativeTarget "gyroUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				591CFCCD2D8B4D5E008A3D95 /* Debug */,
+				591CFCCE2D8B4D5E008A3D95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59C55D1C2D8DF45A00DEB0CD /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59C55D1D2D8DF45A00DEB0CD /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59C55D1C2D8DF45A00DEB0CD /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 591CFC9A2D8B4D5D008A3D95 /* Project object */;
+}
