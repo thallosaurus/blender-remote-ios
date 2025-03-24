@@ -24,9 +24,6 @@ class ServerPanel(bpy.types.Panel):
         row.label(text="Camera Server", icon="WORLD_DATA")
 
         row = layout.row()
-        row.operator("object.simple_operator")
-
-        row = layout.row()
         props = row.operator("camserver.start_server")
         props.server_addr = "0.0.0.0"
         props.server_port = 56789

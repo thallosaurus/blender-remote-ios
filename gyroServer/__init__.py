@@ -15,8 +15,9 @@ bl_info = {
 import bpy
 import bpy.types
 from .panels import ServerPanel
-from .operators import SimpleOperator, StartServerOperator, StopServerOperator
+from .operators import StartServerOperator, StopServerOperator, CaptureViewport, StopCaptureViewport, OpenCVDebugWindow
 from .settings import WebSocketServerSettings
+from .video import stop_capture
 
 classes = [
 #    ServerOperator
@@ -30,10 +31,12 @@ def register():
         register_class(cls)
 
     bpy.utils.register_class(ServerPanel)
-    bpy.utils.register_class(SimpleOperator)
     bpy.utils.register_class(StartServerOperator)
     bpy.utils.register_class(StopServerOperator)
     bpy.utils.register_class(WebSocketServerSettings)
+    bpy.utils.register_class(CaptureViewport)
+    bpy.utils.register_class(StopCaptureViewport)
+    bpy.utils.register_class(OpenCVDebugWindow)
 
     #bpy.app.timers.register(tcp_handle_data)
     
@@ -45,11 +48,14 @@ def unregister():
     for cls in reversed(classes):
         unregister_class(cls)
 
+    #stop_capture()
     bpy.utils.unregister_class(ServerPanel)
-    bpy.utils.unregister_class(SimpleOperator)
     bpy.utils.unregister_class(StartServerOperator)
     bpy.utils.unregister_class(StopServerOperator)
     bpy.utils.unregister_class(WebSocketServerSettings)
+    bpy.utils.unregister_class(CaptureViewport)
+    bpy.utils.unregister_class(StopCaptureViewport)
+    bpy.utils.unregister_class(OpenCVDebugWindow)
     #bpy.utils.unregister_class(AsyncLoopModalOperator)
     #bpy.types.VIEW3D_MT_object.remove(server_menu_func)
 

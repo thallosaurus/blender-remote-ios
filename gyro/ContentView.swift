@@ -25,74 +25,30 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            //Text("x: \($x), y: \($y), z: \($z)")
             if wsDelegate.isConnected {
                 NavigationStack {
                     List {
                         ForEach(wsDelegate.availableCameras) { cam in
                             NavigationLink(cam.name) {
-                                VStack {
-                                    Text("Host: \(host)")
-                                    Text("X: \(wsDelegate.x)")
-                                    Text("Y: \(wsDelegate.y)")
-                                    Text("Z: \(wsDelegate.z)")
-                                    Text("aX: \(wsDelegate.ax)")
-                                    Text("aY: \(wsDelegate.ay)")
-                                    Text("aZ: \(wsDelegate.az)")
-                                    Button("Calibrate") {
-                                        //self.socket?.disconnect()
-                                        self.wsDelegate.recalibrate()
-                                    }
-                                }
-                                .onAppear {
-                                    self.wsDelegate.startGyroStream(cameraId: cam.name)
-                                }
-                                .onDisappear {
-                                    self.wsDelegate.stopGyroStream()
-                                }
+                                GyroCameraView(wsDelegate: self.wsDelegate, cam: cam)
                             }
                             
                         }
                     }
                 }
             } else {
-                TextField("Host", text: $host)
-                Button("Connect") {
-                    var request = URLRequest(url: URL(string: "http://\(host):56789")!)
-                    request.timeoutInterval = 5
-                    self.socket = WebSocket(request: request)
-                    self.socket?.delegate = self.wsDelegate
-                    self.socket?.connect()
-                }
-            }
-
-                /*Button(ex.timer != nil ? "Stop" : "Start") {
-                    
-                    if ex.timer == nil {
-                        
-                        do {
-                            try self.ex.startGyros(interval: gyroUpdateInterval)
-                        } catch GyroControllerError.gyroNotAvailable {
-                            lastError = "Gyro Not Available"
-                            showAlert = true
-                        } catch let error {
-                            lastError = error.localizedDescription
-                            showAlert = true
-                        }
-                    } else {
-                        ex.stopGyros()
+                VStack {
+                    TextField("Host", text: $host)
+                    Button("Connect") {
+                        var request = URLRequest(url: URL(string: "http://\(host):56789")!)
+                        request.timeoutInterval = 5
+                        self.socket = WebSocket(request: request)
+                        self.socket?.delegate = self.wsDelegate
+                        self.socket?.connect()
                     }
-                }
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text(lastError))
-                }
-            
-            Button("Recalibrate") {
-                ex.recalibrate()
-            }.disabled(ex.timer == nil)*/
-
+                }.padding()
+            }
         }
-        .padding()
     }
 }
 

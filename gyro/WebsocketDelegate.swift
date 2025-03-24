@@ -7,8 +7,15 @@
 
 import Starscream
 import Foundation
+import UIKit
+
+struct CameraSelect: Codable {
+    var utype = "camselect"
+    var cameraId: String
+}
 
 struct SensorUpdate: Codable {
+    var utype = "sensor"
     var x: Double
     var y: Double
     var z: Double
@@ -33,6 +40,8 @@ class WebsocketDelegate: WebSocketDelegate, ObservableObject {
     @Published var az: Double = 0.0
     
     @Published var availableCameras: [BlenderCamera] = []
+    
+    @Published var img: UIImage?
     
     func recalibrate() {
         self.x = 0.0
@@ -59,17 +68,17 @@ class WebsocketDelegate: WebSocketDelegate, ObservableObject {
             let json = try? JSONDecoder().decode(ServerUpdate.self, from: string.data(using: .utf8)!)
             
             switch json!.utype {
-            case "init":
-                let cam_json = try? JSONDecoder().decode(InitCameraUpdate.self, from: string.data(using: .utf8)!)
+                /*let cam_json = try? JSONDecoder().decode(InitCameraUpdate.self, from: string.data(using: .utf8)!)
                 availableCameras = cam_json!.data.map {
                     s in
                     BlenderCamera(name:s.name)
-                }
+                }*/
             default:
                 print(json!.utype)
             }
         case .binary(let data):
             print("Received data: \(data.count)")
+            img = UIImage(data: data) ?? UIImage()
         case .ping(_):
             break
         case .pong(_):
@@ -130,15 +139,6 @@ struct ServerUpdate: BaseUpdate {
     let utype: String
 }
 
-struct InitCameraUpdate: BaseUpdate {
-    let data: [BCamUpdate]
-}
 
-struct BCamUpdate: Codable {
-    let name: String
-}
 
-struct BlenderCamera: Identifiable {
-    let name: String
-    var id: String { name }
-}
+

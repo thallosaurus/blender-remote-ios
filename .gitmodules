@@ -1,0 +1,3 @@
+[submodule "gyroServer/VirtuCameraBlender"]
+	path = gyroServer/VirtuCameraBlender
+	url = https://github.com/shycats/VirtuCameraBlender.git
