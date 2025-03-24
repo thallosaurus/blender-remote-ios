@@ -25,8 +25,8 @@ class ServerPanel(bpy.types.Panel):
 
         row = layout.row()
         props = row.operator("camserver.start_server")
-        props.server_addr = "0.0.0.0"
-        props.server_port = 56789
+        #props.server_addr = "0.0.0.0"
+        #props.server_port = 56789
 
         row = layout.row()
         row.operator("camserver.stop_server")

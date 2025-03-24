@@ -24,21 +24,23 @@ shutdown = False
 from zeroconf import Zeroconf, ServiceInfo
 
 zc = Zeroconf()
+zc_info = None
 
 fqdn = socket.gethostname()
 
 # TODO Blender Settings
-ip_addr = socket.gethostbyname(fqdn)
-hostname = fqdn.split(".")[0]
+#ip_addr = socket.gethostbyname(fqdn)
+#hostname = fqdn.split(".")[0]
 
-zc_service_name = "Blender Camera"
-zc_base = {'service': zc_service_name, 'version': '1.0.0'}
-zc_info = ServiceInfo('_blender-cam._tcp.local.',
-    'server._blender-cam._tcp.local.', 
-    addresses=[socket.inet_aton(ip_addr)],
-    port=56789,
-    properties=zc_base, 
-    server=hostname + '.local')
+def make_zc_desc(ip, port):
+    zc_service_name = "Blender Camera"
+    zc_base = {'service': zc_service_name, 'version': '1.0.0', "ip": ip, "port": 56789}
+    return ServiceInfo('_blender-cam._tcp.local.',
+        'server._blender-cam._tcp.local.', 
+        addresses=[socket.inet_aton(ip)],
+        port=56789,
+        properties=zc_base)
+        #server=hostname + '.local')
 
 
 def start_server(host, port):
@@ -57,9 +59,11 @@ def start_server(host, port):
     wserver_thread = threading.Thread(target=wserver.serve_forever)
     wserver_thread.daemon = True
     wserver_thread.start()
-    print("ws listening on 0.0.0.0:56789")
+    print("ws listening on ""+:56789")
     #server = serve(echo, "")
 
+    global zc_info
+    zc_info = make_zc_desc(ip=host,port=port)
     zc.register_service(zc_info)
 
 
@@ -86,6 +90,7 @@ def stop_server():
 
     wserver = None
 
+    global zc_info
     zc.unregister_service(zc_info)
 
     #bpy.app.handlers.load_post.remove(load_post)
@@ -133,7 +138,8 @@ class WebSocketApp(_WebSocket):
     def send_camera_list(self):
                 # send initial camera data
         cam_ids = get_cam_ids()
-        data = json.dumps({"utype": "cameras", "data": cam_ids})
+        camera = bpy.context.scene.camera
+        data = json.dumps({"utype": "cameras", "data": cam_ids, "current": camera.name})
         print(data)
         self.send(payload=data,binary=False)
 
@@ -142,10 +148,11 @@ def queue_handler():
         data = message_queue.get()
 
         if data["utype"] == "sensor":
-            camera = bpy.data.objects[data["cameraId"]]
+            #camera = bpy.data.objects[data["cameraId"]]
+            camera = bpy.context.scene.camera
 
-            if camera is not None:
-                camera.rotation_euler = (data["x"] * -1, data["y"], data["z"])
+#            if camera is not None:
+            camera.rotation_euler = (data["x"] * -1, data["y"], data["z"])
                 #camera.location = (data["ax"], data["ay"], data["z"])
                 #camera.location[0] += data["ax"]
                 #camera.location[1] += data["ay"]
@@ -172,12 +179,12 @@ def queue_handler():
             data = json.dumps({"utype": "cameras", "data": cam_ids})
             broadcast(data, False)
 
-        elif data["utype"] == "switchvp":
-            for area in bpy.context.screen.areas: # iterate through areas in current screen
-                if area.type == 'VIEW_3D':
-                    for space in area.spaces: # iterate through spaces in current VIEW_3D area
-                        if space.type == 'VIEW_3D': # check if space is a 3D view
-                            space.viewport_shade = 'RENDERED' # set the viewport shading to rendered
+        #elif data["utype"] == "switchvp":
+        #    for area in bpy.context.screen.areas: # iterate through areas in current screen
+        #        if area.type == 'VIEW_3D':
+        #            for space in area.spaces: # iterate through spaces in current VIEW_3D area
+        #                if space.type == 'VIEW_3D': # check if space is a 3D view
+        #                    space.viewport_shade = 'RENDERED' # set the viewport shading to rendered
 
         else:
             print("Unknown utype" + data["utype"])

@@ -13,6 +13,9 @@ class StartServerOperator(bpy.types.Operator):
     server_addr: bpy.props.StringProperty(name="addr", description="TCP Server Address", default="0.0.0.0")
     server_port: bpy.props.IntProperty(name="port", description="TCP Server Port", default=56789, min=1000, max=2**16-1)
 
+    #server_addr: None
+    #server_port: None
+
 
     @classmethod
     def poll(cls, context):

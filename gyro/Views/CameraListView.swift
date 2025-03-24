@@ -20,7 +20,7 @@ struct CameraListView: View {
                     cam in
                     NavigationLink(cam.name) {
                         VStack {
-                            BlenderCameraView(camera: cam)
+                            BlenderCameraView()
                         }
                     }
                 }
@@ -33,13 +33,6 @@ struct CameraListView: View {
                     })
                 })
                 
-                
-                ToolbarItem(placement: .topBarLeading, content: {
-                    Button(action: disconnect, label: {
-                        Text("Disconnect")
-                    })
-                    
-                })
             })
             .sheet(isPresented: $showSheet, content: {
                 AddCameraView()

@@ -14,18 +14,24 @@ class WebSocketServerSettings(AddonPreferences):
     
     host: StringProperty(
         name="Host",
-        description="Listen on host:port",
+        description="Listen on host",
         default="0.0.0.0"
     )
     
     port: IntProperty(
         name="Port",
-        description="Listen on host:port",
+        description="Listen on port",
         default=56789,
         min=0,
         max=65535,
         subtype="UNSIGNED"
     )
+
+    #advertised_ip: StringProperty(
+    #    name="AdvertisedIP",
+    #    description="IP Adress which should be advertised",
+    #    default="127.0.0.1"
+    #)
 
     def draw(self, context):
         layout = self.layout
@@ -36,6 +42,7 @@ class WebSocketServerSettings(AddonPreferences):
         col = split.column()
         col.prop(self, "host")
         col.prop(self, "port")
+        #col.prop(self, "advertised_ip")
         col.separator()
         
         col.prop(self, "auto_start")

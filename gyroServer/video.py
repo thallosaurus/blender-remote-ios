@@ -67,7 +67,10 @@ def stream_vp():
                 f.write(buffer.tobytes())
 
         if success:
-            broadcast(buffer.tobytes(), binary=True)
+            try:
+                broadcast(buffer.tobytes(), binary=True)
+            except:
+                pass
     return 0.01
 
 def opencv_window():

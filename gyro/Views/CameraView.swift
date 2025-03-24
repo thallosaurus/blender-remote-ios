@@ -14,10 +14,13 @@ struct BlenderCameraView: View {
     @EnvironmentObject var client: Client
     @State var options = false
     
+    @State private var animate_shutter = false
+    @State var showNewCamera = false
+    
     //private let rotationChangePublisher = NotificationCenter.default
     //        .publisher(for: UIDevice.orientationDidChangeNotification)
     
-    var camera: BlenderCamera
+    //var camera: BlenderCamera
     
     var cameraWidget: some View {
         VStack {
@@ -67,20 +70,44 @@ struct BlenderCameraView: View {
     }
     
     var body: some View {
-        //ZStack {
-            Image(uiImage: client.img)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .overlay(alignment: .trailing, content: {
-                    cameraWidget
+        NavigationStack {
+            ZStack {
+                Image(uiImage: client.img)
+                    .resizable()
+                    .clipped()
+                    .aspectRatio(contentMode: .fill)
+                    .overlay(alignment: .trailing, content: {
+                        cameraWidget
+                    })
+            }
+            .navigationTitle(client.currentCamera ?? "Select Camera")
+            .toolbar(content: {
+                ToolbarTitleMenu(content: {
+                    Button("Create New") {
+                        showNewCamera.toggle()
+                    }
+                    
+                    Divider()
+                    
+                    ForEach(client.cameras) {
+                        cam in
+                        Button(cam.name) {
+                            client.setBlenderCamera(cam.name)
+                        }
+                    }
                 })
-            //CameraViewController()
-        //}
+            })
+            .toolbarBackground(.hidden, for: .navigationBar)
+            .sheet(isPresented: $showNewCamera, content: {
+                AddCameraView()
+                    .presentationBackground(.thinMaterial)
+            })
+        }
+        
         
         .onAppear {
             changeOrientation(to: .landscapeLeft)
-            client.setBlenderCamera(camera)
-            client.startGyroStream(updateInterval: updateInterval, camera: camera)
+            client.startGyroStream(updateInterval: updateInterval)
         }
         .onDisappear {
             client.stopGyroStream()
@@ -91,6 +118,9 @@ struct BlenderCameraView: View {
         options = true
     }
     func savePhoto() {
+        withAnimation(Animation.linear.speed(0.3).repeatCount(1, autoreverses: true)) {
+            animate_shutter.toggle()
+        }
         client.pauseViewport()
         UIImageWriteToSavedPhotosAlbum(client.img, nil, nil, nil)
     }
@@ -103,6 +133,6 @@ struct BlenderCameraView: View {
 }
 
 #Preview {
-    BlenderCameraView(camera: BlenderCamera(name: "Camera"))
+    BlenderCameraView()
         .environmentObject(Client())
 }

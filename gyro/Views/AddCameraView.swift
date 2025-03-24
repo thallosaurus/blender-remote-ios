@@ -23,7 +23,8 @@ struct AddCameraView: View {
             Form {
                 Section("Name") {
                     LabeledContent(content: {
-                        TextField("New Camera", text: $name)
+                        TextField("Cameraname", text: $name)
+                            .multilineTextAlignment(.trailing)
                     }) {
                         Text("Name")
                     }
@@ -70,6 +71,7 @@ struct AddCameraView: View {
                 ToolbarItem(placement: .topBarTrailing, content: {
                     Button("Ok") {
                         client.newBlenderCamera(update: NewBlenderCamera(x: x, y: y, z: z, FOV: FOV, name: name))
+                        dismiss()
                     }
                 })
             })

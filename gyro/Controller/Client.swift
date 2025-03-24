@@ -8,11 +8,15 @@
 import SwiftUI
 import Starscream
 import CoreMotion
+import Network
+
+
 
 class Client: WebSocketDelegate, ObservableObject {
     @Published var isConnected = false
     @Published var cameras: [BlenderCamera] = []
     @Published var img: UIImage = UIImage()
+    @Published var currentCamera: String?
     
     private var paused = false;
     
@@ -31,16 +35,20 @@ class Client: WebSocketDelegate, ObservableObject {
         self.socket = WebSocket(request: request)
         self.socket?.delegate = self
         self.socket?.connect()
+        
     }
     
     func disconnect() {
+        
         self.socket!.disconnect(closeCode: 0)
         isConnected = false
+        
     }
     
-    func setBlenderCamera(_ camera: BlenderCamera) {
-        let data = try? encoder.encode(CameraSelect(cameraId: camera.name))
+    func setBlenderCamera(_ camera: String) {
+        let data = try? encoder.encode(CameraSelect(cameraId: camera))
         sendToSocket(String(data: data!, encoding: .utf8)!)
+        self.currentCamera = camera
     }
     
     func newBlenderCamera(update: NewBlenderCamera) {
@@ -54,11 +62,11 @@ class Client: WebSocketDelegate, ObservableObject {
         }
     }
     
-    func startGyroStream(updateInterval: Double, camera: BlenderCamera) {
+    func startGyroStream(updateInterval: Double) {
         do {
             sensorTimer = try sensors.startGyros(interval: updateInterval, callback: {
                 atti, accel in
-                self.sendSensorData(cameraId: camera.name, atti: atti, accel: accel)
+                self.sendSensorData(atti: atti, accel: accel)
             })
             
             RunLoop.current.add(sensorTimer!, forMode: .common)
@@ -81,8 +89,8 @@ class Client: WebSocketDelegate, ObservableObject {
         }
     }
     
-    func sendSensorData(cameraId: String, atti: CMAttitude, accel: CMAcceleration) {
-        let data = try? encoder.encode(SensorUpdate(x: atti.roll, y: atti.pitch, z: atti.yaw, ax: accel.x, ay: accel.y, az: accel.z, cameraId: cameraId))
+    func sendSensorData(atti: CMAttitude, accel: CMAcceleration) {
+        let data = try? encoder.encode(SensorUpdate(x: atti.roll, y: atti.pitch, z: atti.yaw, ax: accel.x, ay: accel.y, az: accel.z, cameraId: "stub"))
         sendToSocket(String(data: data!, encoding: .utf8)!)
     }
     
@@ -128,6 +136,7 @@ class Client: WebSocketDelegate, ObservableObject {
         case .cancelled:
             break
         case .error(let error):
+            print(error)
             last_error = error
             error_occured = true
             //handleError(error)
