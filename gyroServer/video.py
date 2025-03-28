@@ -13,7 +13,7 @@ cur_height = 1080
 frame = None
 img = None
 
-capture_frames = False
+capture_frames = True
 
 def capture_viewport():
     global frame, img

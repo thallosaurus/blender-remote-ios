@@ -35,7 +35,7 @@ struct GyroCameraView: View {
         }
         .onAppear {
             DispatchQueue.main.async {
-                AppDelegate.orientationLock = UIInterfaceOrientationMask.portrait
+                //AppDelegate.orientationLock = UIInterfaceOrientationMask.portrait
                 UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
                 UIViewController.attemptRotationToDeviceOrientation()
             }
@@ -43,7 +43,7 @@ struct GyroCameraView: View {
         }
         .onDisappear {
             DispatchQueue.main.async {
-                AppDelegate.orientationLock = UIInterfaceOrientationMask.allButUpsideDown
+                //AppDelegate.orientationLock = UIInterfaceOrientationMask.allButUpsideDown
                 
                 UIViewController.attemptRotationToDeviceOrientation()
             }

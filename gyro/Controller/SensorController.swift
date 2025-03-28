@@ -19,6 +19,7 @@ class SensorController {
         if motion.isDeviceMotionAvailable {
             print("Start Sensors")
             self.motion.deviceMotionUpdateInterval = interval
+            self.motion.showsDeviceMovementDisplay = true
             self.motion.startDeviceMotionUpdates()
             
             return Timer(timeInterval: interval, repeats: true, block: { (timer) in

@@ -14,9 +14,21 @@ import Network
 
 class Client: WebSocketDelegate, ObservableObject {
     @Published var isConnected = false
+    
+
+#if targetEnvironment(simulator)
+    @Published var cameras: [BlenderCamera] = [BlenderCamera(name: "Camera")]
+#else
     @Published var cameras: [BlenderCamera] = []
+#endif
+    
     @Published var img: UIImage = UIImage()
-    @Published var currentCamera: String?
+    
+#if targetEnvironment(simulator)
+    @Published var currentCamera: BlenderCamera? = BlenderCamera(name: "Camera")
+#else
+    @Published var currentCamera: BlenderCamera?
+#endif
     
     private var paused = false;
     
@@ -29,6 +41,10 @@ class Client: WebSocketDelegate, ObservableObject {
     @Published var error_occured: Bool = false
     var socket: WebSocket?
     
+    func changeViewportMode(_ vp: ViewportMode) {
+        print("Changing Viewport Mode to \(vp)")
+    }
+    
     func connect(host: String, port: Int) {
         var request = URLRequest(url: URL(string: "http://\(host):\(port)")!)
         request.timeoutInterval = 5
@@ -39,14 +55,13 @@ class Client: WebSocketDelegate, ObservableObject {
     }
     
     func disconnect() {
-        
         self.socket!.disconnect(closeCode: 0)
         isConnected = false
         
     }
     
-    func setBlenderCamera(_ camera: String) {
-        let data = try? encoder.encode(CameraSelect(cameraId: camera))
+    func setBlenderCamera(_ camera: BlenderCamera) {
+        let data = try? encoder.encode(CameraSelect(cameraId: camera.name))
         sendToSocket(String(data: data!, encoding: .utf8)!)
         self.currentCamera = camera
     }
@@ -84,7 +99,7 @@ class Client: WebSocketDelegate, ObservableObject {
     func pauseViewport() {
         Task {
             paused = true
-            await try! Task.sleep(nanoseconds: 500_00)
+            try! await Task.sleep(nanoseconds: 500_00)
             paused = false
         }
     }

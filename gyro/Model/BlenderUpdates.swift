@@ -15,9 +15,8 @@ struct BlenderCameraUpdate: Codable {
     let data: [BlenderCamera]
 }
 
-struct BlenderCamera: Identifiable, Hashable, Codable {
+struct BlenderCamera: Hashable, Codable {
     let name: String
-    var id: String { get { name } }
 }
 
 struct NewBlenderCamera: Codable {

@@ -110,6 +110,7 @@ enum Resolution {
         }
     }
 }
+
 #Preview {
     AddCameraView()
         .environmentObject(Client())

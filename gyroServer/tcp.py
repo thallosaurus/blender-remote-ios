@@ -12,6 +12,7 @@ from wsgiref.simple_server import make_server
 from ws4py.websocket import WebSocket as _WebSocket
 from ws4py.server.wsgirefserver import WSGIServer, WebSocketWSGIRequestHandler
 from ws4py.server.wsgiutils import WebSocketWSGIApplication
+from bpy.app.handlers import persistent
 
 #sock = None
 
@@ -120,6 +121,10 @@ class WebSocketApp(_WebSocket):
         print("client open")
         sockets.append(self)
 
+        load_post =lambda: self.send_camera_list
+
+        bpy.app.handlers.load_post.append(load_post)
+
         self.send_camera_list()
         pass
 
@@ -143,6 +148,7 @@ class WebSocketApp(_WebSocket):
         print(data)
         self.send(payload=data,binary=False)
 
+@persistent
 def queue_handler():
     while not message_queue.empty():
         data = message_queue.get()
@@ -164,10 +170,11 @@ def queue_handler():
                 bpy.context.scene.camera = camera
 
         elif data["utype"] == "camcreate":
+            print(data)
             camera = bpy.data.cameras.new(name=data["name"])
             camera.lens_unit = "FOV"
             camera.lens = data["FOV"]
-            camera_object = bpy.data.objects.new('Camera', camera)
+            camera_object = bpy.data.objects.new(data["name"], camera)
             camera_object.location = [
                 data["x"],
                 data["y"],
