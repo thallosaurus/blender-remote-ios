@@ -16,35 +16,6 @@ struct ColorSquare: View {
     }
 }
 
-enum ViewportMode: String, Codable, CaseIterable {
-    case Textured
-    case Wireframe
-    case Solid
-    case MaterialPreview
-    case RenderPreview
-    
-    var icon: String {
-        switch self {
-        case .Wireframe:
-            return "grid"
-        case .Solid:
-            return "circle.fill"
-        case .Textured:
-            return "lifepreserver"
-        case .RenderPreview:
-            return "photo"
-        case .MaterialPreview:
-            return "person.crop.rectangle"
-        }
-    }
-}
-
-enum CameraMode: String, Codable, CaseIterable {
-    case Ortho
-    case Perspective
-    case Panoramic
-}
-
 struct CameraGridLayout: View {
     @State private var showOptionsBar = true
     
@@ -115,7 +86,7 @@ struct CameraGridLayout: View {
                                 Picker(selection: $client.currentCamera,
                                        label: EmptyView()
                                 ) {
-                                    ForEach(client.cameras, id: \.self) {
+                                    ForEach(client.cameras, id: \.name) {
                                         c in
                                         Label(c.name, systemImage: "camera")
                                             .tag(c)

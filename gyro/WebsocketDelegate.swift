@@ -9,6 +9,41 @@ import Starscream
 import Foundation
 import UIKit
 
+struct SelectViewportMode: Encodable {
+    var utype = "switchvp"
+    var vmode: ViewportMode
+}
+
+enum ViewportMode: String, Codable, CaseIterable {
+    case Textured = "TEXTURED"
+    case Wireframe
+    case Solid
+    case MaterialPreview
+    case RenderPreview
+    
+    var icon: String {
+        switch self {
+        case .Wireframe:
+            return "grid"
+        case .Solid:
+            return "circle.fill"
+        case .Textured:
+            return "lifepreserver"
+        case .RenderPreview:
+            return "photo"
+        case .MaterialPreview:
+            return "person.crop.rectangle"
+        }
+    }
+}
+
+enum CameraMode: String, Codable, CaseIterable {
+    case Ortho
+    case Perspective
+    case Panoramic
+}
+
+
 struct CameraSelect: Codable {
     var utype = "camselect"
     var cameraId: String

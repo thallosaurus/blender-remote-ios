@@ -43,6 +43,8 @@ class Client: WebSocketDelegate, ObservableObject {
     
     func changeViewportMode(_ vp: ViewportMode) {
         print("Changing Viewport Mode to \(vp)")
+        let data = try? encoder.encode(SelectViewportMode(vmode: vp))
+        self.sendToSocket(String(data: data!, encoding: .utf8)!)
     }
     
     func connect(host: String, port: Int) {
@@ -51,13 +53,11 @@ class Client: WebSocketDelegate, ObservableObject {
         self.socket = WebSocket(request: request)
         self.socket?.delegate = self
         self.socket?.connect()
-        
     }
     
     func disconnect() {
         self.socket!.disconnect(closeCode: 0)
         isConnected = false
-        
     }
     
     func setBlenderCamera(_ camera: BlenderCamera) {

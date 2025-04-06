@@ -159,6 +159,10 @@ def queue_handler():
 
 #            if camera is not None:
             camera.rotation_euler = (data["x"] * -1, data["y"], data["z"])
+
+            if bpy.data.scenes["Scene"].tool_settings.use_keyframe_insert_auto is True:
+                camera.keyframe_insert(data_path="location", frame=bpy.context.frame_current)
+
                 #camera.location = (data["ax"], data["ay"], data["z"])
                 #camera.location[0] += data["ax"]
                 #camera.location[1] += data["ay"]
@@ -186,12 +190,12 @@ def queue_handler():
             data = json.dumps({"utype": "cameras", "data": cam_ids})
             broadcast(data, False)
 
-        #elif data["utype"] == "switchvp":
-        #    for area in bpy.context.screen.areas: # iterate through areas in current screen
-        #        if area.type == 'VIEW_3D':
-        #            for space in area.spaces: # iterate through spaces in current VIEW_3D area
-        #                if space.type == 'VIEW_3D': # check if space is a 3D view
-        #                    space.viewport_shade = 'RENDERED' # set the viewport shading to rendered
+        elif data["utype"] == "switchvp":
+            for area in bpy.context.screen.areas: # iterate through areas in current screen
+                if area.type == 'VIEW_3D':
+                    for space in area.spaces: # iterate through spaces in current VIEW_3D area
+                        if space.type == 'VIEW_3D': # check if space is a 3D view
+                            space.viewport_shade = 'RENDERED' # set the viewport shading to rendered
 
         else:
             print("Unknown utype" + data["utype"])
